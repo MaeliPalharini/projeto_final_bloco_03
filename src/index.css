@@ -1,2 +1,5 @@
 @import "tailwindcss";
 
+body {
+    @apply bg-[#f1cdc5]; /* rosa claro da sua paleta */
+}
