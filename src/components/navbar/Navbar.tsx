@@ -54,6 +54,7 @@ export default function Navbar() {
                                     Nova Categoria
                                 </NavLink>
                             </li>
+
                         </ul>
                     </nav>
 
