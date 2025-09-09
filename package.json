@@ -12,6 +12,7 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
     "axios": "^1.11.0",
+    "lucide-react": "^0.543.0",
     "phosphor-react": "^1.4.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className="w-full bg-[#0d2a47] text-[#f1cdc5]">
             <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col items-center gap-3">
                 <p className="text-lg font-semibold text-center">
-                    ClickFarma © {year} — Todos os direitos reservados
+                    ClickPharma © {year} — Todos os direitos reservados
                 </p>
 
                 <p className="text-sm text-center text-[#d9b2a9]">

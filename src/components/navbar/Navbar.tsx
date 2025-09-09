@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png"; //
 
 export default function Navbar() {
     return (
@@ -6,15 +7,17 @@ export default function Navbar() {
             <div className="container mx-auto px-8">
                 <div className="flex h-20 items-center">
                     <div className="flex-1">
-                        <Link to="/" className="flex items-center gap-2">
-                            <span className="text-2xl font-extrabold text-[#d9b2a9]">
-                                ClickFarma
-                            </span>
+                        <Link to="/" className="flex items-center gap-3">
+                            <img
+                                src={logo}
+                                alt="Logo ClickFarma"
+                                className="h-17 object-contain"
+                            />
                         </Link>
                     </div>
 
-                    <nav className="flex-1 flex justify-center">
-                        <ul className="flex items-center gap-8 font-semibold text-lg">
+                    <nav className="flex-1 flex">
+                        <ul className="flex flex-1 justify-evenly items-center font-semibold text-lg">
                             <li>
                                 <NavLink
                                     to="/"
@@ -31,32 +34,45 @@ export default function Navbar() {
 
                             <li>
                                 <NavLink
-                                    to="/categorias"
+                                    to="/categorias/novo"
                                     className={({ isActive }) =>
-                                        `inline-block transform transition-transform duration-200 ease-out hover:scale-110 ${
+                                        `inline-block whitespace-nowrap transform transition-transform duration-200 ease-out hover:scale-110 ${
                                             isActive ? "text-[#d9b2a9] underline" : "text-[#f1cdc5]"
                                         }`
                                     }
                                 >
-                                    Categorias
+                                    Cadastrar Categoria
                                 </NavLink>
                             </li>
 
                             <li>
                                 <NavLink
-                                    to="/categorias/novo"
+                                    to="/sobre"
                                     className={({ isActive }) =>
                                         `inline-block transform transition-transform duration-200 ease-out hover:scale-110 ${
                                             isActive ? "text-[#d9b2a9] underline" : "text-[#f1cdc5]"
                                         }`
                                     }
                                 >
-                                    Nova Categoria
+                                    Sobre nós
                                 </NavLink>
                             </li>
 
+                            <li>
+                                <NavLink
+                                    to="/contato"
+                                    className={({ isActive }) =>
+                                        `inline-block transform transition-transform duration-200 ease-out hover:scale-110 ${
+                                            isActive ? "text-[#d9b2a9] underline" : "text-[#f1cdc5]"
+                                        }`
+                                    }
+                                >
+                                    Contato
+                                </NavLink>
+                            </li>
                         </ul>
                     </nav>
+
 
                     <div className="flex-1 flex justify-end"></div>
                 </div>

@@ -1,5 +1,6 @@
 import minhaImagem from "../assets/back1.png";
 import { Link } from "react-router-dom";
+import ListaCategorias from "../components/categoria/ListaCategorias.tsx";
 
 function Home() {
     return (
@@ -45,6 +46,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <ListaCategorias />
         </>
     );
 }
