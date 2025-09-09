@@ -44,4 +44,4 @@ O objetivo é simular uma farmácia online, com funcionalidades de **CRUD de cat
 📜 Licença
 
 Este projeto é apenas para fins educacionais.
-Criado com 💙 por Lucas Palharini no curso Generation Brasil.
+Criado com 💙 por Maeli Palharini no curso Generation Brasil.
