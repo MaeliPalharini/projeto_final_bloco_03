@@ -2,13 +2,13 @@ import { Mail, Phone, Headphones } from "lucide-react";
 
 export default function Contato() {
     return (
-        <div className="container mx-auto p-15">
+        <div className="container mx-auto p-8">
             <h1 className="text-3xl font-bold mb-6 text-[#0d2a47]">Nosso time está à disposição: veja abaixo como nos encontrar.</h1>
 
             <div className="grid md:grid-cols-2 gap-15">
                 <div className="space-y-6">
                     <div className="bg-gray-100 rounded-xl p-6 shadow-sm">
-                        <h2 className="font-bold text-lg mb-2">Nosso Endereço</h2>
+                        <h2 className="font-bold text-lg mb-2">Nosso Endereço:</h2>
                         <p className="text-gray-600">
                             Av. Ipiranga, xx – República <br />
                             São Paulo – SP, 01046-925
@@ -29,7 +29,7 @@ export default function Contato() {
                     </div>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-8">
                     <div className="bg-gray-100 rounded-xl p-6 flex items-start gap-4 shadow-sm">
                         <Headphones className="w-8 h-8 text-[#0d2a47]" />
                         <div>
@@ -46,12 +46,12 @@ export default function Contato() {
                             <h2 className="font-bold text-lg">E-mail</h2>
                             <p className="text-gray-600">
                                 <a href="mailto:suporte@clickfarma.com" className="hover:underline">
-                                    suporte@clickfarma.com
+                                    suporte@clickpharma.com
                                 </a>
                             </p>
                             <p className="text-gray-600">
                                 <a href="mailto:contato@clickfarma.com" className="hover:underline">
-                                    contato@clickfarma.com
+                                    contato@clickpharma.com
                                 </a>
                             </p>
                         </div>

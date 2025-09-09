@@ -7,15 +7,15 @@ function Home() {
         <>
             <div className="bg-[#0d2a47] flex justify-center">
                 <div
-                    className="container mx-auto px-4
+                    className="container mx-auto px-8
                       grid grid-cols-1 md:grid-cols-2 gap-8
                       text-[#f1cdc5]
-                      min-h-[50vh] md:min-h-[60vh]
+                      min-h-[50vh] md:min-h-[0vh]
                       items-center py-8"
                         >
-                    <div className="flex flex-col gap-4 md:items-start items-center">
+                    <div className="flex flex-col gap-2 md:items-start items-center">
                         <h2 className="text-5xl font-bold text-center md:text-left text-[#d9b2a9]">
-                            Bem-vinda ao ClickFarma!
+                            Bem-vinda ao ClickPharma!
                         </h2>
                         <p className="text-xl text-center md:text-left">
                             Gerencie suas categorias de forma simples e prática.
@@ -41,7 +41,7 @@ function Home() {
                         <img
                             src={minhaImagem}
                             alt="Imagem Página Home ClickFarma"
-                            className="w-full max-w-[600px] h-auto object-cover rounded-lg shadow-lg"
+                            className="w-full max-w-[800px] h-auto object-cover rounded-lg shadow-lg"
                         />
                     </div>
                 </div>

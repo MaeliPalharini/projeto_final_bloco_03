@@ -5,13 +5,13 @@ export default function Navbar() {
     return (
         <header className="w-full bg-[#0d2a47] text-[#f1cdc5] shadow-md">
             <div className="container mx-auto px-8">
-                <div className="flex h-20 items-center">
+                <div className="flex h-30 items-center">
                     <div className="flex-1">
                         <Link to="/" className="flex items-center gap-3">
                             <img
                                 src={logo}
                                 alt="Logo ClickFarma"
-                                className="h-17 object-contain"
+                                className="h-25 object-contain"
                             />
                         </Link>
                     </div>
