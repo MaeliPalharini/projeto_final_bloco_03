@@ -62,7 +62,7 @@ export default function Contato() {
                         <div>
                             <h2 className="font-bold text-lg">Telefone</h2>
                             <p className="text-gray-600">
-                                <a href="tel:+551140028922" className="hover:underline">
+                                <a href="tel:+551140028922" className="hover:underline" title="PS2">
                                     (11) 4002-8922
                                 </a>
                             </p>

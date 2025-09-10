@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {atualizarCategoria, buscarCategoriaPorId, criarCategoria} from "../../services/Services.ts";
 import type Categoria from "../../models/Categoria.ts";
-
+import {ToastAlerta} from "../../utils/ToastAlerta.ts";
+import SyncLoader from "react-spinners/SyncLoader";
 
 export default function FormCategoria() {
+    const [isLoading] = useState(false);
     const [categoria, setCategoria] = useState<Omit<Categoria, "id">>({
         nome: "",
         descricao: ""
@@ -22,25 +24,31 @@ export default function FormCategoria() {
     }, [id]);
 
     function handleChange(
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) {
-        const { name, value } = e.target;
+        const { name, value } = event.target;
         setCategoria({
             ...categoria,
             [name]: value,
         });
     }
 
-    async function handleSubmit(e: React.FormEvent) {
-        e.preventDefault();
+    async function handleSubmit(event: React.FormEvent) {
+        event.preventDefault();
 
-        if (id) {
-            await atualizarCategoria(Number(id), { id: Number(id), ...categoria });
-        } else {
-            await criarCategoria(categoria);
+        try {
+            if (id) {
+                await atualizarCategoria(Number(id), { id: Number(id), ...categoria });
+                ToastAlerta("Categoria atualizada com sucesso!", "sucesso");
+            } else {
+                await criarCategoria(categoria);
+                ToastAlerta("Categoria cadastrada com sucesso!", "sucesso");
+            }
+
+            navigate("/categorias");
+        } catch (error) {
+            ToastAlerta("Erro ao salvar categoria.", "erro");
         }
-
-        navigate("/categorias");
     }
 
     return (
@@ -70,9 +78,23 @@ export default function FormCategoria() {
                     />
                     <button
                         type="submit"
-                        className="w-full px-4 py-3 bg-[#5a122e] text-white rounded-lg font-semibold hover:bg-[#7a1a40] transition-colors"
+                        disabled={isLoading}
+                        className={`w-full px-4 py-3 rounded-lg font-semibold transition-colors ${
+                            isLoading
+                                ? "bg-gray-400 text-white cursor-not-allowed"
+                                : "bg-[#5a122e] text-white hover:bg-[#7a1a40]"
+                        }`}
                     >
-                        Salvar
+                        {isLoading ? (
+                            <div className="flex justify-center">
+                                <SyncLoader color="#f1cdc5" size={10} />
+                            </div>
+                        ) : id ? (
+                            "Atualizar"
+                        ) : (
+                            "Cadastrar"
+                        )}
+
                     </button>
                 </form>
             </div>

@@ -7,10 +7,12 @@ import DeleteCategoria from "./components/categoria/DeletarCategoria.tsx";
 import ListaCategorias from "./components/categoria/ListaCategorias.tsx";
 import Sobre from "./pages/Sobre.tsx";
 import Contato from "./pages/Contato.tsx";
+import {ToastContainer} from "react-toastify";
 
 export default function App() {
     return (
         <div className="min-h-screen flex flex-col">
+            <ToastContainer />
             <Navbar />
             <main className="flex-1 gap-1">
                 <Routes>

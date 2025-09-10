@@ -41,7 +41,7 @@ function Home() {
                         <img
                             src={minhaImagem}
                             alt="Imagem Página Home ClickFarma"
-                            className="w-full max-w-[800px] h-auto object-cover rounded-lg shadow-lg"
+                            className="w-full max-w-[1000px] h-auto object-cover rounded-lg shadow-lg"
                         />
                     </div>
                 </div>

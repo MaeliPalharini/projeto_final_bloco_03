@@ -30,13 +30,13 @@ export default function ListaCategorias() {
             <div className="container mx-auto px-4">
                 <h2 className="text-2xl font-bold text-[#0d2a47] mb-8">Categorias</h2>
 
-                <div className="flex gap-2 mb-6">
+                <div className="flex gap-1 mb-2">
                     <input
                         type="text"
                         placeholder="Buscar categoria por nome..."
                         value={busca}
-                        onChange={(e) => setBusca(e.target.value)}
-                        className="border p-2 rounded w-full"
+                        onChange={(event) => setBusca(event.target.value)}
+                        className="border p-1 rounded w-xs flex-grow"
                     />
                     <button
                         onClick={() => carregarCategorias(busca)}

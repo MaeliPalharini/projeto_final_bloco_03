@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type Categoria from "../../models/Categoria.ts";
-import {buscarCategoriaPorId, deletarCategoria} from "../../services/Services.ts";
+import { buscarCategoriaPorId, deletarCategoria } from "../../services/Services.ts";
+import { ToastAlerta } from "../../utils/ToastAlerta.ts";
 
-
-
-export default function DeleteCategoria() {
+export default function DeletarCategoria() {
     const [categoria, setCategoria] = useState<Categoria>();
+    const [isLoading, setIsLoading] = useState(false);
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -17,9 +17,20 @@ export default function DeleteCategoria() {
     }, [id]);
 
     async function handleDelete() {
-        if (id) {
-            await deletarCategoria(Number(id));
-            navigate("/categorias");
+        try {
+            if (id) {
+                setIsLoading(true);
+                await deletarCategoria(Number(id));
+                ToastAlerta("Categoria apagada com sucesso!", "sucesso");
+
+                setTimeout(() => {
+                    setIsLoading(false);
+                    navigate("/categorias");
+                }, 1500);
+            }
+        } catch (error) {
+            ToastAlerta("Erro ao deletar a categoria.", "erro");
+            setIsLoading(false);
         }
     }
 
@@ -37,13 +48,19 @@ export default function DeleteCategoria() {
                     <div className="flex gap-4 mt-6">
                         <button
                             onClick={handleDelete}
-                            className="px-5 py-2 bg-[#5a122e] text-white rounded-lg hover:bg-red-500 transition"
+                            disabled={isLoading}
+                            className={`px-5 py-2 rounded-lg text-white transition ${
+                                isLoading
+                                    ? "bg-gray-400 cursor-not-allowed"
+                                    : "bg-[#5a122e] hover:bg-red-500"
+                            }`}
                         >
-                            Confirmar
+                            {isLoading ? "Excluindo..." : "Confirmar"}
                         </button>
 
                         <button
                             onClick={() => navigate("/categorias")}
+                            disabled={isLoading}
                             className="px-5 py-2 bg-[#0d2a47] text-white rounded-lg hover:bg-[#12365f] transition"
                         >
                             Cancelar
